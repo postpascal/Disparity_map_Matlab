@@ -2,8 +2,8 @@
 Generating disparity map from a stereo pair im Matlab.
 ---
 ###image_left
-![image_left](https://raw.githubusercontent.com/postpascal/Disparity_map_Matlab/master/pentagon_left.bmp =300x300)
+<img src="https://raw.githubusercontent.com/postpascal/Disparity_map_Matlab/master/pentagon_right.bmp" width = "300" height = "300" alt="图片名称" align=center />
 ###image_right
-![image_right](https://raw.githubusercontent.com/postpascal/Disparity_map_Matlab/master/pentagon_right.bmp =300x300)
+![image_right](https://raw.githubusercontent.com/postpascal/Disparity_map_Matlab/master/pentagon_right.bmp)
 ###diaparity_map
-![diaparity_map](https://raw.githubusercontent.com/postpascal/Disparity_map_Matlab/master/Disparity_map.png =300x300)
+![diaparity_map](https://raw.githubusercontent.com/postpascal/Disparity_map_Matlab/master/Disparity_map.png)
