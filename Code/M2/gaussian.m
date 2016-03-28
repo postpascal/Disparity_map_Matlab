@@ -1,6 +1,6 @@
 function y=gaussian(a)
 [x,y,z]=size(a);
-imgau=fspecial('gaussian',[3,3],1.3);
+imgau=fspecial('gaussian',[11,11],5);
 if z>1;
     a(:, :,1)=conv2(double(a(:, :,1)),double(imgau),'same');
     a(:, :,2)=conv2(double(a(:, :,2)),double(imgau),'same');

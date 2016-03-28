@@ -11,7 +11,8 @@ function [optdx]=match_pixel(i,j,max_search,w,im_l,im_r)
 a=zeros(2*max_search+1,2*max_search+1);
 %get search region
 if j<=max_search
-    y=j;
+    y=1;
+    ye=1+2*max_search;
 else
     y=j-max_search;
 end
@@ -21,7 +22,8 @@ else
     ye=j+max_search;
 end
 if i<=max_search
-    x=i;
+    x=1;
+    xe=1+2*max_search;
 else
     x=i-max_search;
 end
@@ -34,14 +36,17 @@ a=im_r(x:xe,y:ye);
 %%
 %using SSD
 mincd=Inf;
+
 for r_j=y+w:ye-w
-    cd=(im_l(i-w:i+w,j-w:j+w)-im_r(i-w:i+w,r_j-w:r_j+w)).^2;
-    sum_cd=sum(cd ,2);
-    sum_cd =sum(sum_cd);
-    if sum_cd<mincd;
-        mincd=sum_cd;
-        optdx=j-r_j;%from left to right, so j>r_j
-    end
+%     for r_i=x+w:xe-w
+        cd=(im_l(i-w:i+w,j-w:j+w)-im_r(i-w:i+w,r_j-w:r_j+w)).^2;
+        sum_cd=sum(cd ,2);
+        sum_cd =sum(sum_cd);
+        if sum_cd<mincd;
+            mincd=sum_cd;
+            optdx=j-r_j;%from left to right, so j>r_j
+        end
+%     end
 end
 end
 
